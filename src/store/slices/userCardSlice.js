@@ -7,11 +7,16 @@ const initialState = {
 };
 
 const userCardSlice = createSlice({
+  name: "user",
   initialState,
-  name: "userCard",
-  reducers: {},
+  reducers: {
+    selectFavourite: (state) => {
+      state.isFavourite = !state.isFavourite;
+    },
+  },
 });
 
-const { reducer } = userCardSlice;
+const { reducer, actions } = userCardSlice;
 
+export const { selectFavourite } = actions;
 export default reducer;
